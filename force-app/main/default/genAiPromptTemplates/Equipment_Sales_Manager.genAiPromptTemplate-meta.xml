@@ -1,0 +1,3638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>Equipment_Sales_Manager</developerName>
+    <masterLabel>Equipment Sales Manager</masterLabel>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time (Days) : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0 months&quot;
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+estimated Delivery Time (Months) : **Months**
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time (Days) : 60 Days
+Estimated Delivery Time (Months) : 2 Months
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time (Days) : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0 months&quot;
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+If the {!$Input:estimatedDeliveryTime} value is in decimal, always round up to the next whole number.
+Example: 4.1 → 5,7.8 → 8
+
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time (Days) : 60 Days
+Estimated Delivery Time (Months) : 2 Months
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0 months&quot;
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+If the {!$Input:estimatedDeliveryTime} value is in decimal, always round up to the next whole number.
+Example: 4.1 → 5,7.8 → 8
+Display estimated Delivery Time for days and months in single line and add &quot;Approximately&quot; word for months.
+
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time : 60 Days and 2 Months Approximately 
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0 months&quot;
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+If the {!$Input:estimatedDeliveryTime} value is in decimal, always round up to the next whole number.
+Example: 4.1 → 5,7.8 → 8
+
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time : 60 Days and 2 Months Approximately 
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time (Days) : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0 months&quot;
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+estimated Delivery Time (Months) : **Months** If the value is in decimal, always round up to the next whole number. Example:4.1 → 5, 7.8 → 8,9.1 → 10
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time (Days) : 60 Days
+Estimated Delivery Time (Months) : 2 Months
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time (Days) : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0&quot; or &quot;0 months&quot;
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+estimated Delivery Time (Months) : **Months** If the value is in decimal, always round up to the next whole number. Example:4.1 → 5, 7.8 → 8,9.1 → 10
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time (Days) : 60 Days
+Estimated Delivery Time (Months) : 2 Months
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+
+*Instructions*
+Whenever the user question is asking the question where quantity is to be delivered, do not show 
+&quot;Estimated Delivery Time (Days) and
+Estimated Delivery Time (Months)&quot;
+Example:  &quot;How many CT scanner can be delivered to Mumbai location in 12 months?&quot;
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time (Days) : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is 0 or &apos;0 months&apos;.
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+estimated Delivery Time (Months) : **Months** If the value is in decimal, always round up to the next whole number. Example:4.1 → 5, 7.8 → 8,9.1 → 10
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time (Days) : 60 Days
+Estimated Delivery Time (Months) : 2 Months
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+
+*Instructions*
+Whenever the user question is asking the question where quantity is to be delivered, do not show 
+&quot;Estimated Delivery Time (Days) and
+Estimated Delivery Time (Months)&quot;
+Example:  &quot;How many CT scanner can be delivered to Mumbai location in 12 months?&quot;
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time (Days) : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is 0 or &apos;0 months&apos;.
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+estimated Delivery Time (Months) : **Months** If the value is in decimal, always round up to the next whole number. Example:4.1 → 5, 7.8 → 8,9.1 → 10
+
+ 
+**Output Format (example)**: 
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time (Days) : 60 Days  (This will be always in Months, do not display if values is 0 or &apos;0 months&apos;.)
+Estimated Delivery Time (Months) : 2 Months (This will be always in Months, do not display if values is 0 or &apos;0 months&apos;)
+
+
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+
+*Instructions*
+Whenever the user question is asking the question where quantity is to be delivered, do not show 
+&quot;Estimated Delivery Time (Days) and
+Estimated Delivery Time (Months)&quot;
+Example:  &quot;How many CT scanner can be delivered to Mumbai location in 12 months?&quot;
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time (Days) : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is 0 or &apos;0 months&apos;.
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+estimated Delivery Time (Months) : **Months** If the value is in decimal, always round up to the next whole number. Example:4.1 → 5, 7.8 → 8,9.1 → 10
+
+ 
+**Output Format (example)**: 
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time (Days) : 60 Days  (This will be always in Months, do not display if values is 0 or &apos;0 months&apos;.)
+Estimated Delivery Time (Months) : 2 Months (This will be always in Months, do not display if values is 0 or &apos;0 months&apos;)
+
+You do not have to show Estimated Delivery Time (Days) when {!$Input:estimatedDeliveryTime} is 0 
+AND
+You do not have to show Estimated Delivery Time (Months) when {!$Input:estimatedDeliveryTime} is 0
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0 months&quot;
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time : 2 Months
+
+Also mention the brief summary of the output.
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Days , DO NOT DISPLAY IF VALUE is 0
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time : 20 Days
+
+Also mention the brief summary of the output.
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Days , DO NOT DISPLAY IF VALUE is 0
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time : 20 Days
+
+Also mention the brief summary of the output using the output values of the parameters mentioned above.
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Days , DO NOT DISPLAY IF VALUE is 0
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time : 20 Days
+
+Also mention the brief summary of the output ({!$Input:searchEquipmentQuantity} or {!$Input:estimatedDeliveryTime}, whichever is asked in the user query) using the output values of the parameters mentioned above.
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Days , DO NOT DISPLAY IF VALUE is 0
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product :&lt;Product&gt;
+Equipment Quantity : &lt;Quantity&gt;
+Current Backlog : &lt;Current Backlog&gt;
+Supplier Monthly Capacity : &lt;Supplier monthly capacity&gt;
+Estimated Delivery Time : &lt;estimated delivery time&gt;
+
+Also mention the brief summary of the output using the output values of the parameters mentioned above.
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Days , DO NOT DISPLAY IF VALUE is 0
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product :&lt;Product&gt;
+Equipment Quantity : &lt;Quantity&gt;
+Current Backlog : &lt;Current Backlog&gt;
+Supplier Monthly Capacity : &lt;Supplier monthly capacity&gt;
+Estimated Delivery Time : &lt;estimated delivery time&gt;
+
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+**Task:**
+Based on the inputs provided, ALWAYS return the output in the **exact** format shown below. Your response must:
+
+* Be in **bold**
+* ALWAYS follow the same field order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+* **Omit** any field where the value is `0`, `null`, or empty
+* Ensure the phrase &quot;**Here is the breakdown of your product:**&quot; appears at the start
+* If &quot;estimated Delivery Time&quot; is `0`, **do not show it at all**
+
+**Inputs:**
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity}
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} *(Always in Days. Do not display if value is 0)*
+
+**Output Format (Always use this format, in bold):**
+
+**Here is the breakdown of your product:**
+**Product : &lt;Product&gt;**
+**Equipment Quantity : &lt;Quantity&gt;**
+**Current Backlog : &lt;Current Backlog&gt;**
+**Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;**
+**Estimated Delivery Time : &lt;Estimated Delivery Time&gt;**
+
+&gt; Never display fields with value 0 or null. Always use bold formatting for all lines. Always follow this format without exception.
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days, not in months. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt; (Convert it into days)
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+Estimated Delivery Time is always in days. Do not display “months”
+
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+Estimated Delivery Time is already in days. Do not convert or multiply. Just add &quot;days&quot; as the unit
+
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+Estimated Delivery Time is already in days. Do not convert or multiply. Just add &quot;days&quot; as the unit
+
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>you are sales agent
+
+**Task**
+give the product name, current Backlog, supplier Monthly Capacity , estimated Delivery Time, search Equipment Quantity and expected delivery time
+
+**Inputs**:
+product : {!$Input:product}
+Equipment Quantity : {!$Input:searchEquipmentQuantity} 
+current Backlog : {!$Input:currentBacklog}
+supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time : {!$Input:estimatedDeliveryTime} This will be always in Months, do not display if values is &quot;0 months&quot;
+Convert {!$Input:estimatedDeliveryTime} from days into **Months**  and display estimated Delivery Time in days as well as in months
+If the {!$Input:estimatedDeliveryTime} value is in decimal, always round up to the next whole number.
+Example: 4.1 → 5,7.8 → 8
+Display estimated Delivery Time for days and months in single line and add &quot;Approximately&quot; word for months.
+
+
+ 
+**Output Format (example)**:
+Here is the breakdown of you&apos;re product:
+
+Product : MRI Machine
+Equipment Quantity : 10
+Current Backlog : 8
+Supplier Monthly Capacity : 5 
+Estimated Delivery Time : 60 Days and 2 Months Approximately 
+
+
+
+Here Equipment Quantity is the final out  quantiy, If user asked for quantity of machine in partucular timeDuration.
+Display the output as given in above format only in bold, do not display field which has 0 or null as value.
+
+ 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Here Equipment Quantity is the final out quantiy, If user asked for quantity of machine in partucular timeDuration.
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Here &lt;Quantity&gt; is the final out put of quantiy, If user asked for number of machine delivery in particular timeDuration.
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all.
+
+
+
+Inputs:
+ product: {!$Input:product}
+ Equipment Quantity: {!$Input:searchEquipmentQuantity}
+ current Backlog: {!$Input:currentBacklog}
+ supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+ estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+
+Output Format (Always return in this format, in bold):
+
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+ALWAYS SHOW THIS BREAKDOWN OUTPUT FORMAT.
+sUMMARY ONLY BASED ON RECEIVED OUT PUT VALUES. DO NOT ADD ANY VALUE OR ASSUMPTION FROM YOUR SIDE.
+Here &lt;Quantity&gt; is the final out put of quantiy, If user asked for number of machine delivery in particular timeDuration.
+Do not include any field with value 0, null, or empty. Always use bold formatting for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+
+Inputs:
+product: {!$Input:product}
+Equipment Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime} (Always in Days. Do not display if value is 0)
+Output Format (Always return in this format, in bold):
+Here is the breakdown of your product:
+ Product : &lt;Product&gt;
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all
+Do not add any extra summary, assumptions, or explanations beyond the provided input values. Output must be strictly based on received inputs only.
+
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+
+NEVER CREATE YOUR OWN SUMMARY OR INTERPRETATION. ONLY SHOW THE STRUCTURED BREAKDOWN WITH PROVIDED VALUES.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product:
+Always displays the fields in this order: Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all
+Do not add any commentary, explanation, or summary sentence. Output must only contain the structured breakdown. No extra text is allowed before or after.
+Inputs:
+product: {!$Input:product}
+Equipment Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}t (Always return in this format, in bold):
+Here Output Format (Always return in this format, in bold):
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+Strictly output the above breakdown only. Never add any other line like &apos;Unfortunately...&apos; or &apos;It is not possible...&apos;
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response that:
+Starts with: Here is the breakdown of your product Mr. AKBAR:
+Always displays the fields in this order: 
+Product, Equipment Quantity, Current Backlog, Supplier Monthly Capacity, Estimated Delivery Time
+Omits any field where the value is 0, null, or empty
+Bold all lines exactly as shown in the output format
+If Estimated Delivery Time is 0, do not display it at all
+Do not add any commentary, explanation, or summary sentence. Output must only contain the structured breakdown. No extra text is allowed before or after.
+Inputs:
+product: {!$Input:product}
+Equipment Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}t (Always return in this format, in bold):
+Here Output Format (Always return in this format, in bold):
+ Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+Strictly output the above breakdown only. Never add any other line like &apos;Unfortunately...&apos; or &apos;It is not possible...&apos;
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ 
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}t 
+(Always return in this format, in bold):
+
+Here Output Format (Always return in this format, in bold):
+Equipment Quantity : &lt;Quantity&gt;
+ Current Backlog : &lt;Current Backlog&gt;
+ Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+ Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+
+Use the inputs below to generate a response that: 
+Starts with: Here is the breakdown of your product Mr. AKBAR:
+
+If {!$Input:estimatedDeliveryTime} is 0 then show text as -
+{!$Input:searchEquipmentQuantity} units can be deliver .
+
+OR
+
+if  {!$Input:searchEquipmentQuantity} is 0 then show text as -
+Estimated delivery time is {!$Input:estimatedDeliveryTime} days.
+
+This is the only summary.
+
+
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+Strictly output the above breakdown only. Never add any other line like &apos;Unfortunately...&apos; or &apos;It is not possible...&apos;
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ 
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}t 
+(Always return in this format, in bold):
+
+Use the inputs below to generate a response that: 
+Starts with: Here is the breakdown of your product Mr. AKBAR:
+
+If {!$Input:estimatedDeliveryTime} is 0 then show text as -
+{!$Input:searchEquipmentQuantity} units can be deliver .
+
+OR
+
+if  {!$Input:searchEquipmentQuantity} is 0 then show text as -
+Estimated delivery time is {!$Input:estimatedDeliveryTime} days.
+
+This is the only summary.
+
+
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+Strictly output the above breakdown only. Never add any other line like &apos;Unfortunately...&apos; or &apos;It is not possible...&apos;
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ 
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}t 
+(Always return in this format, in bold):
+
+Here Output Format (Always return in this format, in bold):
+Equipment Quantity : &lt;Quantity&gt;
+Current Backlog : &lt;Current Backlog&gt;
+Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+
+Use the inputs below to generate a response that: 
+Starts with: 
+
+If {!$Input:estimatedDeliveryTime} is 0 then show text as -
+
+Here is the breakdown of your product Mr. AKBAR:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+{!$Input:searchEquipmentQuantity} units can be deliver .
+
+OR
+
+if  {!$Input:searchEquipmentQuantity} is 0 then show text as -
+
+Here is the breakdown of your product Mr. AKBAR g:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Estimated delivery time is {!$Input:estimatedDeliveryTime} days.
+
+This is the only summary
+
+
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+Strictly output the above breakdown only. Never add any other line like &apos;Unfortunately...&apos; or &apos;It is not possible...&apos;
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ 
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}t 
+(Always return in this format, in bold):
+
+Here Output Format (Always return in this format, in bold):
+Equipment Quantity : &lt;Quantity&gt;
+Current Backlog : &lt;Current Backlog&gt;
+Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+
+Use the inputs below to generate a response that: 
+Starts with: 
+
+
+if  {!$Input:searchEquipmentQuantity} is 0 then show text as -
+
+Summary START form here
+
+Here is the breakdown of your product Mr. AKBAR g:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Estimated delivery time is {!$Input:estimatedDeliveryTime} days.
+
+Summary END  here
+
+OR
+
+If {!$Input:estimatedDeliveryTime} is 0 then show text as -
+
+Here is the breakdown of your product Mr. AKBAR:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+{!$Input:searchEquipmentQuantity} units can be deliver .
+
+
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+Strictly output the above breakdown only. Never add any other line like &apos;Unfortunately...&apos; or &apos;It is not possible...&apos;
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ 
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}t 
+(Always return in this format, in bold):
+
+Here Output Format (Always return in this format, in bold):
+Equipment Quantity : &lt;Quantity&gt;
+Current Backlog : &lt;Current Backlog&gt;
+Supplier Monthly Capacity : &lt;Supplier Monthly Capacity&gt;
+Estimated Delivery Time : &lt;Estimated Delivery Time&gt;
+
+
+Use the inputs below to generate a response that: 
+Starts with: 
+
+
+if  {!$Input:searchEquipmentQuantity} is 0 then show text as -
+
+Summary START form here
+
+Here is the breakdown of your product Mr. AKBAR g:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Estimated delivery time is {!$Input:estimatedDeliveryTime} days.
+
+Summary END  here
+
+OR
+
+If {!$Input:estimatedDeliveryTime} is 0 then show text as -
+
+Here is the breakdown of your product Mr. AKBAR:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity:{!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+{!$Input:searchEquipmentQuantity} units can be deliver .
+
+
+Rules:
+If user asks “How many machines can be delivered in given time” → value will come in searchEquipmentQuantity.
+If user asks “What is approximate delivery time” → value will come in estimatedDeliveryTime.
+Do not include any field with value 0, null, or empty.
+Strictly output the above breakdown only. Never add any other line like &apos;Unfortunately...&apos; or &apos;It is not possible...&apos;
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+
+Here is the breakdown of your product Mr. BKL:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+Always use bold for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+
+Here is the breakdown of your {!$Input:product} Mr. BKL:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+Always use bold for every line.
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+
+Here is the breakdown of your {!$Input:product} Mr. BKL:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the breakdown, always provide a **Summary** section.  
+- The **Summary must exactly reflect the Quantity (Deliverable Quantity)**:  
+ - If Quantity = 0 → write:  
+  **Summary:** No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+ - If Quantity &gt; 0 → write:  
+  **Summary:** A total of {!$Input:searchEquipmentQuantity} units can be delivered within {!$Input:estimatedDeliveryTime} days.  
+- Never perform new calculations or add formulas in the summary.  
+- Never overwrite or ignore the provided Quantity.  
+- Always use bold for every line. 
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+
+Here is the breakdown of your {!$Input:product} Mr. BKL:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Rules:  
+- If Quantity = 0 → write:  
+ **Summary:** No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+- If Quantity &gt; 0 → write:  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered within {!$Input:estimatedDeliveryTime} days.
+
+- Never skip the Breakdown.  
+- Never perform new calculations or show formulas in the Summary.  
+- Always use bold for every line. 
+
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product} Mr. BKL:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):  
+- If Quantity = 0 →  
+ **Summary:** No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+- If Quantity &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered within {!$Input:estimatedDeliveryTime} days.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product} Mr. BKL:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):  
+- If Quantity = 0 →  
+ **Summary:** No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+- If Quantity &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product} Mr. BKL:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):  
+- If Quantity = 0 →  
+ **Summary:** No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+- If Quantity &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered with in requested time.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product}:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):  
+- If Quantity = 0 →  
+ **Summary:** No BRO No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+- If Quantity &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered with in requested time.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product}:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):  
+- If Quantity = 0 →  
+ **Summary:** No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+- If Quantity &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered with in requested time.
+- If Estimated Delivery Time &gt; 0 →  
+ **Summary:** Requested quantity can be deliver approx in {!$Input:estimatedDeliveryTime} days.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product}:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):  
+- If  {!$Input:searchEquipmentQuantity}= 0 →  
+ **Summary:** No units can be delivered within {!$Input:estimatedDeliveryTime} days due to backlog and capacity limits.  
+- If {!$Input:searchEquipmentQuantity} &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered with in requested time.
+- If {!$Input:estimatedDeliveryTime}&gt; 0 →  
+ **Summary:** Requested quantity can be deliver approx in {!$Input:estimatedDeliveryTime} days.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product}:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):   
+- If {!$Input:searchEquipmentQuantity} &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered with in requested time.
+- If {!$Input:estimatedDeliveryTime}&gt; 0 →  
+ **Summary:** Requested quantity can be deliver approx in {!$Input:estimatedDeliveryTime} days.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product}:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):   
+- If {!$Input:searchEquipmentQuantity} = 0 AND ({!$Input:estimatedDeliveryTime} = 0 or NULL)→  
+ **Summary:** No units can be delivered with in requested time.
+- If {!$Input:searchEquipmentQuantity} &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered with in requested time.
+- If {!$Input:estimatedDeliveryTime}&gt; 0 →  
+ **Summary:** Requested quantity can be deliver approx in {!$Input:estimatedDeliveryTime} days.
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent.
+Task:
+ Use the inputs below to generate a response.
+Inputs:
+product: {!$Input:product}
+Quantity: {!$Input:searchEquipmentQuantity}
+current Backlog: {!$Input:currentBacklog}
+supplier Monthly Capacity: {!$Input:supplierMonthlyCapacity}
+estimated Delivery Time: {!$Input:estimatedDeliveryTime}
+
+Output Rules:
+Do not include any field with value 0, null, or empty.
+
+Always start with:
+Output Rules:  
+- Do not include any field with value 0, null, or empty.  
+- The response must always contain **two sections in this exact order**:  
+ 1. Breakdown  
+ 2. Summary
+
+Breakdown Section (must always appear first):
+
+Here is the breakdown of your {!$Input:product}:
+ 
+Product : {!$Input:product}
+ Quantity : {!$Input:searchEquipmentQuantity}
+ Current Backlog : {!$Input:currentBacklog}
+ Supplier Monthly Capacity : {!$Input:supplierMonthlyCapacity}
+ Estimated Delivery Time : {!$Input:estimatedDeliveryTime}
+
+- After the Breakdown, always provide a separate **Summary** section.  
+
+Summary Section (must always appear after Breakdown):   
+- If {!$Input:searchEquipmentQuantity} = 0 AND ({!$Input:estimatedDeliveryTime} = 0 or NULL)→  
+ **Summary:** No units can be delivered with in requested time. \n
+- If {!$Input:searchEquipmentQuantity} &gt; 0 →  
+ **Summary:** A total of {!$Input:searchEquipmentQuantity} units of {!$Input:product} can be delivered with in requested time. \n
+- If {!$Input:estimatedDeliveryTime}&gt; 0 →  
+ **Summary:** Requested quantity can be deliver approx in {!$Input:estimatedDeliveryTime} days. \n
+
+Formatting Rules:  
+- Always bold every field and label.  
+- Never skip the Breakdown section, even if values are 0 or null.  
+- The Summary must always follow the Breakdown.  chat
+- Do not perform new calculations. Use only the given inputs. 
+</content>
+        <inputs>
+            <apiName>searchEquipmentQuantity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>searchEquipmentQuantity</masterLabel>
+            <referenceName>Input:searchEquipmentQuantity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>estimatedDeliveryTime</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>estimatedDeliveryTime</masterLabel>
+            <referenceName>Input:estimatedDeliveryTime</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>supplierMonthlyCapacity</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>supplierMonthlyCapacity</masterLabel>
+            <referenceName>Input:supplierMonthlyCapacity</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>currentBacklog</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>currentBacklog</masterLabel>
+            <referenceName>Input:currentBacklog</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>product</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>product</masterLabel>
+            <referenceName>Input:product</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

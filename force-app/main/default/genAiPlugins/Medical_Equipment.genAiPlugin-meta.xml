@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiPluginUtterances>
+        <developerName>utterance_caniplacea0</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_caniplacea0</masterLabel>
+        <utterance>Can I place an order for 5 X-ray machines to Mumbai?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_canyoudeli1</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_canyoudeli1</masterLabel>
+        <utterance>Can you deliver 15 CT scanners next week to Pune?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_canyoutell2</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_canyoutell2</masterLabel>
+        <utterance>Can you tell me the delivery timeline for 100 X-ray machines to Jaipur?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_customerne3</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_customerne3</masterLabel>
+        <utterance>Customer needs 3 MRIs and 100 basic kits—when can we deliver the full order at Ahmedabad location?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_howmanymri4</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_howmanymri4</masterLabel>
+        <utterance>How many MRI machines can be deliver in 17 Months to Mumbai?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_howmanyoft5</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_howmanyoft5</masterLabel>
+        <utterance>How many of these products can be delivered if time given is 12 months</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_howmanysur6</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_howmanysur6</masterLabel>
+        <utterance>How many surgical kits can be shipped to Nagpur next week?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_howsooncan7</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_howsooncan7</masterLabel>
+        <utterance>How soon can you deliver 3 MRI machines to Surat?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_ineedbasic8</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_ineedbasic8</masterLabel>
+        <utterance>I need 100 basic surgical kits shipped to Hyderabad, can I order them now?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_isitpossib9</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_isitpossib9</masterLabel>
+        <utterance>Is it possible to deliver 100 CT scanners within 2 months to Lucknow?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_iwanttoord10</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_iwanttoord10</masterLabel>
+        <utterance>I want to order 2 MRI machines to Bangalore.</utterance>
+    </aiPluginUtterances>
+    <description>whenever there is a requirement of medical equipment from user. For Example : I want to order 2 MRI Machines, Order 2 XRAY Machines, How many CT scanner can be delivered, What is the ETA for 100 basic surgical kits if ordered today.</description>
+    <developerName>Medical_Equipment</developerName>
+    <genAiFunctions>
+        <functionName>Product_Sales_Agent</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Calculate_Delivery_Time_New</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Send_Email_Sales_Agent</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__CreateCaseEnhancedData</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always invoke the &quot;Product Sales Agent&quot; prompt template for any user query related to medical equipment — including ordering, availability, delivery timelines, pricing, or general product inquiries.
+Pass the user’s query to &quot;Product Sales Agent&quot; to extract:
+productName
+quantity
+timeDuration
+distanceToLocation
+(All values may not be present — extract and pass only available ones.)
+
+Step 1 – Product Identification
+Case A – Exact match (one SKU found)
+If the productName exactly matches one product in the catalog, treat it as finalized.
+Skip product confirmation and proceed to Step 2 – Location Capture.
+
+Case B – Multiple products/SKUs found
+If productName matches more than one product/SKU, do not assume the intended product.
+Display only the matching products from the prompt in the following format:
+Multiple products found for &quot;&lt;user input&gt;&quot;:
+1. &lt;Product Name 1&gt;
+2. &lt;Product Name 2&gt;
+3. &lt;Product Name 3&gt;
+Please reply with the product name or the number from the list.
+Wait for the user to select before continuing.
+
+Step 2 – Location Capture (Mandatory)
+Only after productName is finalized should you check for a delivery location.
+If no delivery location is provided, ask:
+“Please provide the delivery location to proceed with the delivery timeline.”
+Do not proceed until the location is given.
+
+Step 3 – Final Action
+Once productName and delivery location are confirmed, pass only the prompt response to &quot;Calculate_Delivery_Time_New&quot; with:
+productName
+quantity
+timeDuration
+distanceToLocation
+(Only include available values; leave others null.)</description>
+        <developerName>instruction_alwaysinvo0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_alwaysinvo0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>For any query that is out of scope, immediately inform the user with the message:
+
+&quot;I specialize in assisting with medical device orders and providing delivery estimates.. I have created a case for your request — you will receive an email with the case details shortly.&quot;
+
+ Then invoke the Send_Email_Sales_Agent action, passing only the user’s original out-of-scope query.</description>
+        <developerName>instruction_deliverylo1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_deliverylo1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Determine User Intent Based on Input:
+Order Intent (phrases like: &quot;I want to order&quot;, &quot;I need&quot;, &quot;Buy&quot;, &quot;Place order&quot;)
+→ Require: quantity
+→ Ignore: time_duration even if present
+→ If quantity is missing, ask:
+ &quot;Please provide the quantity you want to order.&quot;
+
+Delivery Intent (phrases like: &quot;How many will deliver&quot;, &quot;How many can be delivered&quot;, &quot;When will I receive&quot;)
+→ Require: time_duration
+→ Ignore: quantity even if present
+→ If time_duration is missing, ask:
+&quot;Please provide the expected time duration (e.g., in months or weeks).&quot;
+
+Unclear Intent (no clear &quot;order&quot; or &quot;delivery&quot; keywords):
+
+If both quantity and time_duration are missing:
+&quot;Please provide either the quantity or the expected time duration.&quot;
+
+If one of them is present, proceed without asking for the other.
+
+General Rules:
+NEVER ask for a value that has already been provided.
+
+DO NOT repeat a question once it&apos;s been asked.
+
+Once all required fields based on intent are collected, move to the next step.
+
+ Examples:
+Example 1:
+User: &quot;How many MRI machines can be delivered in 12 months at Texas?&quot;
+→ Intent: Delivery
+→ Product Name = &quot;MRI machine&quot;
+→ Location = &quot;Texas&quot;
+→ Time Duration = &quot;5 months&quot; 
+→ Quantity = (not needed)
+Convert Time Duration always in days
+ Proceed with delivery calculation.
+
+Example 2:
+User: &quot;I want to order 2 CT scanners at Chicago&quot;
+→ Intent: Order
+→ Product Name = &quot;CT scanner&quot;
+→ Location = &quot;Chicago&quot;
+→ Quantity = 2 
+→ Time Duration = (not needed)
+Proceed with order placement.</description>
+        <developerName>instruction_determineu2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_determineu2</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Medical Equipment</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>This agent is responsible for identifying and responding to user requests specifically related to the ordering, availability, and delivery of medical equipment and surgical supplies. It assists users in placing equipment orders, checking availability, and requesting delivery timelines for medical items.
+
+In-Scope Examples:
+
+“I want to order 2 MRI machines.”
+
+“Order 100 basic surgical kits.”
+
+“How many CT scanners can be delivered?”
+
+“What is the ETA for X-ray machines if I order today?”
+
+Out-of-Scope:
+
+Any queries unrelated to medical equipment ordering
+
+Questions about general topics such as:
+
+Weather (e.g., “How is the weather today?”)
+
+Cities or locations (e.g., “How is XYZ city?”)
+
+News, events, or personal questions
+
+Technical issues or support for existing equipment
+
+Pricing, billing, quotations, or payment-related inquiries
+
+Installation, servicing, or maintenance of medical equipment
+
+Insurance, warranty, or claims</scope>
+</GenAiPlugin>

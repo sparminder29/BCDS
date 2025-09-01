@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>Sales_Agent_Output</developerName>
+    <masterLabel>Sales Agent Output</masterLabel>
+    <templateVersions>
+        <content>Once you received the input extract the data from {!$Input:User_Input} and display in the below format:
+Here is the break down
+Product Name : MRI Machine (units) - omit the label “Product Name&quot;
+Current backlog: 8 units ahead of you
+Supplier Monthly capacity: 3 units/month
+Estimated delivery time: 4-5 months
+
+Do not display &quot;Product Name : &quot; as text instead display product name only i.e &quot;MRI Machine (units)&quot;
+
+
+
+</content>
+        <inputs>
+            <apiName>User_Input</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Input</masterLabel>
+            <referenceName>Input:User_Input</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <templateVersions>
+        <content>Once you received the input from apex an extract the data from it and treat {!$Input:User_Input} as null and display in the below format:
+Here is the break down
+Product Name : MRI Machine (units) - omit the label “Product Name&quot;
+Current backlog: 8 units ahead of you
+Supplier Monthly capacity: 3 units/month
+Estimated delivery time: 4-5 months
+
+Do not display &quot;Product Name : &quot; as text instead display product name only i.e &quot;MRI Machine (units)&quot;
+
+
+
+</content>
+        <inputs>
+            <apiName>User_Input</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Input</masterLabel>
+            <referenceName>Input:User_Input</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

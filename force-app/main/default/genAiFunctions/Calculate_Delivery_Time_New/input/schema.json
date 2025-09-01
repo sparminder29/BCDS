@@ -1,0 +1,35 @@
+{
+  "required" : [ "distanceToLocation", "productName", "quantity", "timeDuration" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "distanceToLocation" : {
+      "title" : "distanceToLocation",
+      "description" : "This refers to the distance (In miles) from \"California\" to the distanceToLocation received from \"Product Sales Agent\" prompt",
+      "lightning:type" : "lightning__integerType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "productName" : {
+      "title" : "productName",
+      "description" : "This refers productName received from \"Product Sales Agent\" prompt",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "quantity" : {
+      "title" : "quantity",
+      "description" : "This refers to the quantity received from \"Product Sales Agent\" prompt, set value as 0 if value is not received.",
+      "lightning:type" : "lightning__integerType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "timeDuration" : {
+      "title" : "timeDuration",
+      "description" : "This refers to the timeDuration received from \"Product Sales Agent\" prompt",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action should be invoked after the completion of &quot;Product Sales Agent&quot; action.  The output from &quot;Product Sales Agent&quot; action should be passed on to the apex class as a JSON format. If any of the variable is missing, consider its value as 0.</description>
+    <invocationTarget>DeliveryCalculationService</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <masterLabel>Calculate Delivery Time New</masterLabel>
+</GenAiFunction>
